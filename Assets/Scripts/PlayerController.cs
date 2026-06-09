@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
+        CheckGameOver();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -54,4 +56,14 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
         }
     }
+    void CheckGameOver()
+    {
+        float cameraY = Camera.main.transform.position.y;
+
+        if (transform.position.y < cameraY - 7f)
+        {
+            Debug.Log("GAME OVER");
+        }
+    }
+
 }
