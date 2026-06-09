@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     //地面に接しているかどうか
     private bool isGrounded = false;
+    private bool isGameOver = false;
 
 
     void Start()
@@ -58,11 +59,15 @@ public class PlayerController : MonoBehaviour
     }
     void CheckGameOver()
     {
+        if (isGameOver) return;
+
         float cameraY = Camera.main.transform.position.y;
 
         if (transform.position.y < cameraY - 7f)
         {
+            isGameOver = true;
             Debug.Log("GAME OVER");
+            Time.timeScale = 0f;
         }
     }
 
