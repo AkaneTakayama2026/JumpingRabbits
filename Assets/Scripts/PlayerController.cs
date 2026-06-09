@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     //プレイヤーの移動速度
     public float moveSpeed = 5f;
     //ジャンプ力
-    public float jumpPower = 10f;
+    public float jumpPower = 15f;
 
     private Rigidbody2D rb;
     //地面に接しているかどうか
