@@ -115,7 +115,13 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateLifeUI()
     {
-        lifeText.text = "Life : " + life;
+        string hearts = "";
+
+        for (int i = 0; i < life; i++)
+        {
+            hearts += "♥";
+        }
+        lifeText.text = hearts;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
