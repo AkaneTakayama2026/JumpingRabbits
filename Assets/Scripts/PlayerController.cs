@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
     //プレイヤーの移動速度
     public float moveSpeed = 5f;
     //ジャンプ力
@@ -18,11 +20,19 @@ public class PlayerController : MonoBehaviour
     {
         //rigidbody2Dを取得
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
     private void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetBool("IsGrounded", isGrounded);
+
         //左右移動入力
         float moveInput = 0f;
 
@@ -44,6 +54,15 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             //空中状態に変更
             isGrounded = false;
+        }
+
+        if (moveInput < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (moveInput > 0)
+        {
+            spriteRenderer.flipX = false;
         }
 
         CheckGameOver();
