@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -133,8 +135,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("Goal"))
         {
-            Debug.Log("CLEAR");
-            Time.timeScale = 0f;
+            SceneManager.LoadScene("2ndStageScene");
         }
     }
 
