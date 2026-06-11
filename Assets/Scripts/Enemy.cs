@@ -2,21 +2,23 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float moveSpeed = 2f;
-    private int direction = 1;
+    public float fallSpeed = 3f;
+    public float deleteDistance = 12f;
+
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
-        transform.Translate(Vector2.right * direction * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
 
-        if (transform.position.x > 7f)
+        if (transform.position.y < player.position.y - deleteDistance)
         {
-            direction = -1;
-        }
-
-        if (transform.position.x < -7f)
-        {
-            direction = 1;
+            Destroy(gameObject);
         }
 
     }

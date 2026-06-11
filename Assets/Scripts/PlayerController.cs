@@ -132,8 +132,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("GAME OVER");
-            Time.timeScale = 0f;
+            Destroy(collision.gameObject);
+            Miss();
         }
         if (collision.CompareTag("Goal"))
         {
