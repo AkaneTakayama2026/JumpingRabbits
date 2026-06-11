@@ -96,6 +96,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("GAME OVER");
             Time.timeScale = 0f;
         }
+        if (collision.CompareTag("Goal"))
+        {
+            Debug.Log("CLEAR");
+            Time.timeScale = 0f;
+        }
     }
 
 }
