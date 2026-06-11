@@ -1500,8 +1500,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285093121
-  m_fontColor: {r: 0.005432516, g: 0.3328032, b: 0.4113207, a: 1}
+    rgba: 4290969087
+  m_fontColor: {r: 1, g: 0.9918341, b: 0.76037735, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1824,15 +1824,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlatformGenerator
   platformPrefab: {fileID: 2175353118719291227, guid: 6e089f79516ddde49952fbd1674ab069, type: 3}
   player: {fileID: 1309990226}
-  startPlatformCount: 20
+  startPlatformCount: 8
   startY: 2
-  minYSpacing: 1.3
-  maxYSpacing: 1.8
+  minYSpacing: 2
+  maxYSpacing: 3
   minX: -6
   maxX: 7
   minXDistance: 4
-  maxXDistance: 6
-  generateAheadDistance: 20
+  maxXDistance: 7
+  generateAheadDistance: 10
   deleteBelowDistance: 12
 --- !u!4 &1518728173
 Transform:
