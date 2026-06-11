@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d462fd52033b70942b1d0c4e883a4544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  canAirJump: 1
   life: 3
   lifeText: {fileID: 615200954}
   moveSpeed: 5

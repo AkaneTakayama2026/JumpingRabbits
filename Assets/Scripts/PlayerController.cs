@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool canAirJump = false;
+
     public int life = 3;
     public TextMeshProUGUI lifeText;
 
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
         //地面にいて、スペースキーが押されたらジャンプ
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && (isGrounded || canAirJump))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             //空中状態に変更
