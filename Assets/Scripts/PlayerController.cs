@@ -1,8 +1,14 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public int life = 3;
+    public TextMeshProUGUI lifeText;
+
+    private Vector3 lastSafePosition;
+    private bool isGameOver = false;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     //プレイヤーの移動速度
@@ -13,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     //地面に接しているかどうか
     private bool isGrounded = false;
-    private bool isGameOver = false;
+
 
 
     void Start()
@@ -25,6 +31,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        rb = GetComponent<Rigidbody2D>();
+        lastSafePosition = transform.position;
+        UpdateLifeUI();
 
     }
 
@@ -74,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
+            lastSafePosition = transform.position;
         }
     }
     void CheckGameOver()
@@ -82,13 +93,31 @@ public class PlayerController : MonoBehaviour
 
         float cameraY = Camera.main.transform.position.y;
 
-        if (transform.position.y < cameraY - 7f)
+        if (transform.position.y < cameraY - 5f)
+        {
+            Miss();
+        }
+    }
+    void Miss()
+    {
+        life--;
+        UpdateLifeUI();
+
+        if (life <= 0)
         {
             isGameOver = true;
             Debug.Log("GAME OVER");
             Time.timeScale = 0f;
+            return;
         }
+        rb.linearVelocity = Vector2.zero;
+        transform.position = lastSafePosition + new Vector3(0f, 1f, 0f);
     }
+    void UpdateLifeUI()
+    {
+        lifeText.text = "Life : " + life;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
