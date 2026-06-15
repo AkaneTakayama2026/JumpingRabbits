@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject floatEnemyprefab;
     public Transform player;
 
     public float spawnInterval = 2f;
@@ -26,6 +27,16 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(
             randomX, player.position.y + spawnHeight, 0f);
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject enemyToSpawn;
+
+        if (Random.value < 0.5f)
+        {
+            enemyToSpawn = enemyPrefab;
+        }
+        else
+        {
+            enemyToSpawn = floatEnemyprefab;
+        }
+        Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
     }
 }
