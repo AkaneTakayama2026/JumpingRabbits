@@ -6,6 +6,13 @@ public class Mochibeam : MonoBehaviour
     public float lifeTime = 3f;
     public GameObject explosionPrefab;
 
+    private Vector2 moveDirection = Vector2.up;
+
+    public void setDirection(Vector2 direction)
+    {
+        moveDirection = direction.normalized;
+    }
+
     void Start()
     {
         Destroy(gameObject, lifeTime);
@@ -13,7 +20,7 @@ public class Mochibeam : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(moveDirection * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

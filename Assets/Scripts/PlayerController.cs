@@ -114,7 +114,26 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        Instantiate(mochiBeamPrefab, attackPoint.position, Quaternion.identity);
+        Vector2 direction = Vector2.up;
+
+        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
+        {
+            direction = Vector2.left;
+        }
+        else if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
+        {
+            direction = Vector2.right;
+        }
+        GameObject beam = Instantiate(mochiBeamPrefab, attackPoint.position, Quaternion.identity);
+
+        Mochibeam mochiBeam = beam.GetComponent<Mochibeam>();
+
+        if (mochiBeam != null)
+        {
+            mochiBeam.setDirection(direction);
+        }
+
+
     }
 
     void Heal()
