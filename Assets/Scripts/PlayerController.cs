@@ -116,6 +116,16 @@ public class PlayerController : MonoBehaviour
         Instantiate(mochiBeamPrefab, attackPoint.position, Quaternion.identity);
     }
 
+    void Heal()
+    {
+        if (life < 3)
+        {
+            life++;
+
+            UpdateLifeUI();
+        }
+    }
+
     void Miss()
     {
         life--;
@@ -152,6 +162,12 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Goal"))
         {
             SceneManager.LoadScene("2ndStageScene");
+        }
+        if (collision.CompareTag("RecoveryItem"))
+        {
+            Heal();
+
+            Destroy(collision.gameObject);
         }
     }
 
