@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public bool canAirJump = false;
+    public GameObject mochiBeamPrefab;
+    public Transform attackPoint;
 
     public int life = 3;
     public TextMeshProUGUI lifeText;
@@ -59,6 +61,12 @@ public class PlayerController : MonoBehaviour
         {
             moveInput = 1f;
         }
+
+        if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            Attack();
+        }
+
         //左右移動を適用
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
@@ -102,6 +110,12 @@ public class PlayerController : MonoBehaviour
             Miss();
         }
     }
+
+    void Attack()
+    {
+        Instantiate(mochiBeamPrefab, attackPoint.position, Quaternion.identity);
+    }
+
     void Miss()
     {
         life--;

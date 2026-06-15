@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5570931414711717927}
+  - component: {fileID: 7477022675625514477}
   - component: {fileID: 6721152502433541826}
   - component: {fileID: 1071424558701275873}
   - component: {fileID: 5623290292640626375}
@@ -34,6 +35,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7477022675625514477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052548542327005628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8b42855a63ef9438bd2b98c9def4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mochibeam
+  speed: 8
+  lifeTime: 3
 --- !u!212 &6721152502433541826
 SpriteRenderer:
   serializedVersion: 2
