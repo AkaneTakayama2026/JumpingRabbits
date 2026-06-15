@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public GameObject healParticlePrefab;
+    public float invincibleTime = 1f;
+    private bool isInvincible = false;
     public bool canAirJump = false;
     public GameObject mochiBeamPrefab;
     public Transform attackPoint;
@@ -176,8 +178,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            if (isInvincible) return;
             Destroy(collision.gameObject);
             Miss();
+
+            StartCoroutine(InvincibleCoroutine());
         }
         if (collision.CompareTag("Goal"))
         {
@@ -197,6 +202,13 @@ public class PlayerController : MonoBehaviour
             }
             Heal();
             Destroy(collision.gameObject);
+        }
+        System.Collections.IEnumerator InvincibleCoroutine()
+        {
+            isInvincible = true;
+            yield return new WaitForSeconds(invincibleTime);
+
+            isInvincible = false;
         }
     }
 
