@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mochibeam
   speed: 8
   lifeTime: 3
+  explosionPrefab: {fileID: 7876040285000465029, guid: 717c4b671c388954ab59c9150f252497, type: 3}
 --- !u!212 &6721152502433541826
 SpriteRenderer:
   serializedVersion: 2

@@ -4,6 +4,7 @@ public class Mochibeam : MonoBehaviour
 {
     public float speed = 8f;
     public float lifeTime = 3f;
+    public GameObject explosionPrefab;
 
     void Start()
     {
@@ -19,6 +20,8 @@ public class Mochibeam : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
 
