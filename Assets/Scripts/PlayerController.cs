@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject healParticlePrefab;
     public bool canAirJump = false;
     public GameObject mochiBeamPrefab;
     public Transform attackPoint;
@@ -167,6 +168,15 @@ public class PlayerController : MonoBehaviour
         {
             Heal();
 
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("RecoveryItem"))
+        {
+            if (healParticlePrefab != null)
+            {
+                Instantiate(healParticlePrefab, collision.transform.position, Quaternion.identity);
+            }
+            Heal();
             Destroy(collision.gameObject);
         }
     }
