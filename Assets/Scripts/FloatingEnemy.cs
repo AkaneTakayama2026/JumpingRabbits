@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FloatingIcon : MonoBehaviour
+public class FloatingEnemy : MonoBehaviour
 {
     //上下移動の速さ
     public float floatSpeed = 2f;
@@ -52,4 +52,3 @@ public class FloatingIcon : MonoBehaviour
         }
     }
 }
-
