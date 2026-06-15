@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Transform player;
     public TextMeshProUGUI scoreText;
+    public static int score;
 
     private int bestHeight = 0;
 
