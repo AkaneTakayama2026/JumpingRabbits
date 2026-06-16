@@ -14,23 +14,25 @@ public class EnemySpawner : MonoBehaviour
     private float timer;
     private float spawnInterval;
 
+
     void Update()
     {
-        if (ScoreManager.score >= 200)
+        float height = player.transform.position.y;
+        if (height >= 200f)
         {
-            spawnInterval = 0.2f;
+            spawnInterval = 0.7f;
         }
-        else if (ScoreManager.score >= 100)
+        else if (height >= 120f)
         {
-            spawnInterval = 0.3f;
+            spawnInterval = 1.0f;
         }
-        else if (ScoreManager.score >= 60)
+        else if (height >= 60f)
         {
-            spawnInterval = 0.5f;
+            spawnInterval = 1.5f;
         }
         else
         {
-            spawnInterval = 1.0f;
+            spawnInterval = 2.0f;
         }
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
