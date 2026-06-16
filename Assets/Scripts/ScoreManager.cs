@@ -5,9 +5,17 @@ public class ScoreManager : MonoBehaviour
 {
     public Transform player;
     public TextMeshProUGUI scoreText;
+
     public static int score;
 
     private int bestHeight = 0;
+    private static int bonusScore = 0;
+
+    private void Start()
+    {
+        score = 0;
+        bonusScore = 0;
+    }
 
     void Update()
     {
@@ -19,5 +27,14 @@ public class ScoreManager : MonoBehaviour
         }
 
         scoreText.text = "Score : " + bestHeight;
+
+        score = bestHeight + bonusScore;
+        scoreText.text = "score : " + score;
     }
+    public static void AddScore(int amount)
+    {
+        bonusScore += amount;
+        Debug.Log("スコア加算: +" + amount + " / bonusScore =" + bonusScore);
+    }
+
 }

@@ -25,8 +25,21 @@ public class Mochibeam : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("ビームが何かに当たった: " + collision.gameObject.name);
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("Enemyに命中");
+            EnemyData enemyData = collision.GetComponent<EnemyData>();
+
+            if (enemyData != null)
+            {
+                ScoreManager.AddScore(enemyData.scoreValue);
+            }
+            else
+            {
+                Debug.LogWarning("EnemyDataがついてません");
+            }
+
             Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
 
             Destroy(collision.gameObject);

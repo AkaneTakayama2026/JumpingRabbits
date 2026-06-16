@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
     public float fallSpeed = 3f;
     public float deleteDistance = 12f;
 
+    public int scoreValue = 10;
+
     private Transform player;
 
     private void Start()
