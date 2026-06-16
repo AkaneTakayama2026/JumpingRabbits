@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf3cfb50f1cc514fa574edb2b75e00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  fallSpeed: 3
+  fallSpeed: 0.5
   deleteDistance: 12
   scoreValue: 10
 --- !u!58 &6451470600760654328
