@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 421860492}
   m_Layer: 0
   m_Name: BG_Moon
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 901073421}
   m_Layer: 0
   m_Name: Next
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,8 +1140,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 707650305
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 81a81dfc662d30f429b8d354b2817f23, type: 3}
@@ -1163,8 +1163,8 @@ Transform:
   m_GameObject: {fileID: 901073420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1, y: 51.73, z: 0}
-  m_LocalScale: {x: 0.58014005, y: 0.6052, z: 1}
+  m_LocalPosition: {x: 3.04, y: 51.14, z: 0}
+  m_LocalScale: {x: 0.58014005, y: 0.6052, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1590,6 +1590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   healParticlePrefab: {fileID: 0}
+  invincibleTime: 1
   canAirJump: 0
   mochiBeamPrefab: {fileID: 0}
   attackPoint: {fileID: 0}
@@ -1895,7 +1896,7 @@ GameObject:
   - component: {fileID: 1362539623}
   m_Layer: 0
   m_Name: BG_Ground
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
