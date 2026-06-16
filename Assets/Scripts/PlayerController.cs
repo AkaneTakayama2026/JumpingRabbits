@@ -102,6 +102,14 @@ public class PlayerController : MonoBehaviour
             lastSafePosition = transform.position;
         }
     }
+
+    void GameOver()
+    {
+        SceneData.lastPlaySceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("GameOverScene");
+    }
+
+
     void CheckGameOver()
     {
         if (isGameOver) return;
@@ -156,8 +164,7 @@ public class PlayerController : MonoBehaviour
         if (life <= 0)
         {
             isGameOver = true;
-            Debug.Log("GAME OVER");
-            Time.timeScale = 0f;
+            GameOver();
             return;
         }
         rb.linearVelocity = Vector2.zero;
