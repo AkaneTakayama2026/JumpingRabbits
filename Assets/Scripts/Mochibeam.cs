@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Mochibeam : MonoBehaviour
 {
+    public AudioClip hitSE;
+    private AudioSource audioSource;
     public float speed = 8f;
     public float lifeTime = 3f;
     public GameObject explosionPrefab;
@@ -15,6 +17,7 @@ public class Mochibeam : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Destroy(gameObject, lifeTime);
     }
 

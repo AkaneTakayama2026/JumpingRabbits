@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioClip jumpSE;
+    public AudioClip healSE;
     private AudioSource audioSource;
+    public AudioClip jumpSE;
     public GameObject healParticlePrefab;
     public float invincibleTime = 1f;
     private bool isInvincible = false;
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastSafePosition = transform.position;
         UpdateLifeUI();
+
 
     }
 
@@ -155,6 +157,8 @@ public class PlayerController : MonoBehaviour
         if (life < 3)
         {
             life++;
+
+            audioSource.PlayOneShot(healSE);
 
             UpdateLifeUI();
         }
