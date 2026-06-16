@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip jumpSE;
+    private AudioSource audioSource;
     public GameObject healParticlePrefab;
     public float invincibleTime = 1f;
     private bool isInvincible = false;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //rigidbody2Dを取得
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -76,6 +79,7 @@ public class PlayerController : MonoBehaviour
         //地面にいて、スペースキーが押されたらジャンプ
         if (Keyboard.current.spaceKey.wasPressedThisFrame && (isGrounded || canAirJump))
         {
+            audioSource.PlayOneShot(jumpSE);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             //空中状態に変更
             isGrounded = false;

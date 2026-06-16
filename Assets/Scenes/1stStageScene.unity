@@ -1638,6 +1638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d462fd52033b70942b1d0c4e883a4544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  jumpSE: {fileID: 8300000, guid: e35997500a7acda478ee5694e9b67ead, type: 3}
   healParticlePrefab: {fileID: 0}
   invincibleTime: 1
   canAirJump: 0
