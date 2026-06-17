@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         //地面にいて、スペースキーが押されたらジャンプ
         if (Keyboard.current.spaceKey.wasPressedThisFrame && (isGrounded || canAirJump))
         {
-            audioSource.PlayOneShot(jumpSE);
+            audioSource.PlayOneShot(jumpSE, SEManager.seVolume);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             //空中状態に変更
             isGrounded = false;
@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             life++;
 
-            audioSource.PlayOneShot(healSE);
+            audioSource.PlayOneShot(healSE, SEManager.seVolume);
 
             UpdateLifeUI();
         }

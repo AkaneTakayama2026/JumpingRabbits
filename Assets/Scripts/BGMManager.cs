@@ -5,6 +5,7 @@ public class BGMManager : MonoBehaviour
 {
     public Slider bgmSlider;
     private AudioSource audioSource;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

@@ -43,7 +43,14 @@ public class Mochibeam : MonoBehaviour
                 Debug.LogWarning("EnemyDataがついてません");
             }
 
-            Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
+            GameObject explosion = Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
+
+            AudioSource explosionAudio = explosion.GetComponent<AudioSource>();
+
+            if (explosionAudio != null)
+            {
+                explosionAudio.volume = SEManager.seVolume;
+            }
 
             Destroy(collision.gameObject);
             Destroy(gameObject);
