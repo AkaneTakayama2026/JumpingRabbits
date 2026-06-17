@@ -1,16 +1,27 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BGMManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Slider bgmSlider;
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        float volume = PlayerPrefs.GetFloat("BGMVolume", 0.5f);
+        audioSource.volume = volume;
+
+        if (bgmSlider != null)
+        {
+            bgmSlider.value = volume;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetVolume(float volume)
     {
-        
+        audioSource.volume = volume;
+
+        PlayerPrefs.SetFloat("BGMVolume", volume);
+        PlayerPrefs.Save();
     }
 }
