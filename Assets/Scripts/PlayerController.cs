@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool canAttack = false;
     public AudioClip healSE;
     private AudioSource audioSource;
     public AudioClip jumpSE;
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
             moveInput = 1f;
         }
 
-        if (Keyboard.current.bKey.wasPressedThisFrame)
+        if (canAttack && Keyboard.current.bKey.wasPressedThisFrame)
         {
             Attack();
         }

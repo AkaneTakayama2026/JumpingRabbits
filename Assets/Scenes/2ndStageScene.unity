@@ -682,63 +682,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1001 &568950351
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 523031956139862939, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_Name
-      value: SEManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258948788704473606, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12845c056c617b14ab4697620b4004b4, type: 3}
 --- !u!1 &615200952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d462fd52033b70942b1d0c4e883a4544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  canAttack: 1
   healSE: {fileID: 8300000, guid: 663920c539535dd46a718e37aba157b1, type: 3}
   jumpSE: {fileID: 8300000, guid: e35997500a7acda478ee5694e9b67ead, type: 3}
   healParticlePrefab: {fileID: 376779199066905462, guid: f36e0e385f6d4a0429cc8184018d7ab7, type: 3}
@@ -2802,5 +2746,4 @@ SceneRoots:
   - {fileID: 280580655}
   - {fileID: 1219585788}
   - {fileID: 846040969}
-  - {fileID: 568950351}
   - {fileID: 350260462}
