@@ -15,15 +15,6 @@ public class OptionManager : MonoBehaviour
             Screen.fullScreen = isFullscreen;
         }
     }
-    public void OpenOption()
-    {
-        optionPanel.SetActive(true);
-    }
-
-    public void CloseOption()
-    {
-        optionPanel.SetActive(false);
-    }
 
     public void SetFullscreen(bool isOn)
     {
@@ -31,5 +22,16 @@ public class OptionManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Fullscreen", isOn ? 1 : 0);
         PlayerPrefs.Save();
+    }
+    public void OpenOption()
+    {
+        optionPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void CloseOption()
+    {
+        optionPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
