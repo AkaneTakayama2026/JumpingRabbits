@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BackGroundLooper
   backgroundPrefab: {fileID: 2647127376967206961, guid: fa108366e0464cd4387d9330c6489051, type: 3}
   player: {fileID: 1309990226}
-  backgroundHeight: 11
+  backgroundHeight: 11.7
   startCount: 5
   generateAheadDistance: 30
   deleteBelowDistance: 20
