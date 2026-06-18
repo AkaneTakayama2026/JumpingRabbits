@@ -11,4 +11,8 @@ public class TitleManager : MonoBehaviour
 
         SceneManager.LoadScene("1stStageScene");
     }
+    public void OpenHowTo()
+    {
+        SceneManager.LoadScene("HowToScene");
+    }
 }
