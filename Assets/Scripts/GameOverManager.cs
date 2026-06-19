@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI scoreText;
 
     private void Start()
     {
+        scoreText.text = "Score : " + ScoreManager.score;
+
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = "High Score : " + highScore;
     }
