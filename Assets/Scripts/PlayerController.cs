@@ -112,6 +112,8 @@ public class PlayerController : MonoBehaviour
 
     void GameOver()
     {
+        ScoreManager.SaveHighScore();
+
         SceneData.lastPlaySceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("GameOverScene");
     }

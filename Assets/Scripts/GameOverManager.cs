@@ -1,8 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    public TextMeshProUGUI highScoreText;
+
+    private void Start()
+    {
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = "High Score : " + highScore;
+    }
+
+
     public void Retry()
     {
         Time.timeScale = 1f;

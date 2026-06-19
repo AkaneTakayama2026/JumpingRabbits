@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static int highScore;
     public Transform player;
     public TextMeshProUGUI scoreText;
 
@@ -13,6 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
         score = 0;
         bonusScore = 0;
     }
@@ -37,4 +39,15 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("スコア加算: +" + amount + " / bonusScore =" + bonusScore);
     }
 
+    public static void SaveHighScore()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+
+            PlayerPrefs.SetInt("HighScore", highScore);
+            PlayerPrefs.Save();
+        }
+
+    }
 }
