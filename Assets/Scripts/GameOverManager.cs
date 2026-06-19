@@ -12,9 +12,17 @@ public class GameOverManager : MonoBehaviour
         scoreText.text = "Score : " + ScoreManager.score;
 
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        highScoreText.text = "High Score : " + highScore;
-    }
 
+        if (ScoreManager.score >= highScore)
+        {
+            highScoreText.text = "NEW RECORD!\nHigh Score :" + highScore;
+        }
+        else
+        {
+            highScoreText.text = "High Score : " + highScore;
+        }
+
+    }
 
     public void Retry()
     {
