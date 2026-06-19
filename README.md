@@ -172,6 +172,8 @@ Assets/
 | サイト名（書籍名） | 内容 | URL |
 |-------------------|------|-----|
 | | | |
+https://fukidesign.com/e0319/|フキダシデザイン
+https://dot-illust.net/category/other/page/2/|DOT ILLUST
 
 ---
 
