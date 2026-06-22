@@ -34,4 +34,6 @@ public class OptionManager : MonoBehaviour
         optionPanel.SetActive(false);
         Time.timeScale = 1f;
     }
+
+
 }

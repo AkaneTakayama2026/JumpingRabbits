@@ -15,7 +15,7 @@ public class GameOverManager : MonoBehaviour
 
         if (ScoreManager.score >= highScore)
         {
-            highScoreText.text = "NEW RECORD!\nHigh Score :" + highScore;
+            highScoreText.text = "<size=150%><color=red>NEW RECORD!!</color></size>\n" + "High Score :" + highScore;
         }
         else
         {

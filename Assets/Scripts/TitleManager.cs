@@ -15,6 +15,11 @@ public class TitleManager : MonoBehaviour
     {
         SceneManager.LoadScene("HowToScene");
     }
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
 
 
 }
