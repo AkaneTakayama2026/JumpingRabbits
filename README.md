@@ -74,9 +74,9 @@
 - [×] Trigger / Collider
 - [×] UI（Canvas, Button, TextMeshPro）
 - [ ] ScriptableObject / JSONデータ
-- [ ] アニメーション / DOTween
+- [×] アニメーション / DOTween
 - [×] サウンド（BGM・SE）
-- [ ] NavMesh / AI
+- [×] NavMesh / AI
 - [×] Timeline / Cinemachine
 - [×] 物理（Rigidbody / CharacterController 等）
 - [ ] その他（　　　　　　　　　　　　　　　　　　　　）
@@ -241,15 +241,10 @@
 - [×] コード実装例・デバッグ（ChatGPT / Gemini 等）
 - [×] Git 操作の確認（Copilot 等）
 - [ ] その他（　　　　　　　　　　　　　　　　　　　　）
-
-> ※ AI を使った場合は、**丸写しせずコメントで理解した内容**を README / コードに残してください。
-
 ---
 
 > **目的**  
-> この README は「開発ドキュメント」として、**制作者本人が毎日更新**することを目的としています。  
-> 完成度だけでなく、**考え方・試行錯誤・改善の過程**を残してください。
+> この README は「開発ドキュメント」として、**制作者本人が毎日更新**が目的。
+> 完成度だけでなく、**考え方・試行錯誤・改善の過程**を残す。
 
 ---
-
-© 2026 職業訓練校 Unity講座（講師：小西秀明）
