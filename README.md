@@ -28,7 +28,7 @@
 | **リポジトリ名** | JumpingRabbit |
 <img width="1536" height="863" alt="スクリーンショット 2026-06-23 141050" src="https://github.com/user-attachments/assets/9e8befda-44ac-4911-acf2-c2f68692c9e5" />
 
-| **GitHub URL** | https://github.com/AkaneTakayama2026/JumpingRabbits/blob/main/README.md|
+| **GitHub URL** |https://github.com/AkaneTakayama2026/JumpingRabbits|
 | **作成日** | 2026/06/08 |
 | **Unity バージョン** | Unity 6（URP） |
 
