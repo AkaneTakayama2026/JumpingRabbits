@@ -17,6 +17,7 @@
 - [参考資料](#references)
 - [AI利用の有無](#use-of-ai)
 
+
 ---
 
 ## 制作者情報 <a id="author-info"></a>
@@ -25,6 +26,8 @@
 |------|------|
 | **制作者名** | 高山茜 |
 | **リポジトリ名** | JumpingRabbit |
+<img width="1536" height="863" alt="スクリーンショット 2026-06-23 141050" src="https://github.com/user-attachments/assets/9e8befda-44ac-4911-acf2-c2f68692c9e5" />
+
 | **GitHub URL** |  |
 | **作成日** | 2026/06/08 |
 | **Unity バージョン** | Unity 6（URP） |
