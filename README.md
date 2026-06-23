@@ -107,8 +107,8 @@
 
 ## 進捗メモ <a id="progress-notes"></a>
 
-| 日付 | 作業内容 | 備考 | 作業時間（任意） |
-|------|-----------|------|------------------|
+| 日付 | 作業内容 | | 作業時間|
+
 | 6/8 | 企画書作成・Git初期化・プレイヤー移動 | プロトタイプ開始 | 7h |
 | 6/9 | ステージ作成・攻撃処理・当たり判定 | |7h|
 | 6/11 | ステージ追加作成・プレイヤーアニメーション追加|7h | |
@@ -127,10 +127,30 @@
 ## エラーログ <a id="error-log"></a>
 
 | 日付 | エラー内容 | 発生箇所 | 解決方法 | 備考 |
-|------|-----------|----------|----------|------|
-| 5/19 | 例：NullReferenceException | PlayerController.cs | 例：GetComponent の null チェック追加 | |
-| ... | ... | ... | ... | ... |
 
+|6/9|タイトル画面の装飾キャラがUIの後ろに隠れる|TitleScene|Canvas（UI）とSpriteRendererの描画準を見直し|描画順の理解|
+|6/11| CS0117 'SceneData' に 'lastPlaySceneName' の定義がありません|SceneData.cs/GameOverManager.cs|staticクラスとメンバ定義を修正し、シーン名保持用変数を作成| リトライ機能実装時|
+|6/15|Cannot load scene: Invalid scene name (empty string)|GameOverManager.cs|シーン遷移前に現在のシーン名を保存する処理を追加|リトライ先が空文字になっていた|
+|6/16|スコアが高さしか反映されない|ScoreManager.cs|高さスコアと撃破スコアを合算して表示するよう修正|ロジック不整合|
+
+|6/16|敵撃破時の須古賈華さんが画面に反映されない|Enemy/ScoreManager|Debug.Log出力で加算確認後、表示用変数を統一|デバッグログ活用|
+
+|6/16|MissingReferenceException|EnemySpawner.cs|Destroy済オブジェクトを参照しないようにPrefab設定を見直し|Prefab参照切れ|
+
+|6/17|Stage1で攻撃キー(B)押すとエラー|PlayerController.cs|攻撃Prefab未設定時は攻撃処理を実行しないよう修正|Stageごとの差異対応|
+
+|6/17|背景が途中から反転しなくなる|BackGroundLooper|攻撃Prefab未設定時は攻撃処理を実行しないよう修正|Stageごとの差異対応|
+
+|6/18|ビルド時に背景サイズが画面と合わない|背景Sprite|カメラサイズと背景サイズの再調整|解像度差異対応|
+|6/19|オプション画面表示中もゲームが進行する|OptionManager.cs|Time.timeScaleを利用して一時停止処理を追加|||
+|6/19|SE音量スライダーが反応しない|SEManager|SlidedrのOnValueChanged設定を修正|UIイベント設定ミス|
+|6/19|フルスクリーン設定が保存されない|OptionManager.cs|PlayerPrefab保存処理とToggleイベントを確認・修正|設定保存機能|
+|6/22|ToggleON時もFalseが渡される|OptionManager.cs|Toggleの値を直接取得するよう修正|Unity　UIイベントの使用理解|
+
+|||||||
+|||||||
+|||||||
+|||||||
 > ※ エラーが出たら記録してください。暫定対応と「後で見直す点」も書いて OK です。
 
 ---
