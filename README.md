@@ -208,9 +208,13 @@
 オプション機能の実装：フルスクリーンのON/OFF切り替え機能　/　BGM・SE音量調整機能　/　設定内容の保存機能
 ・ユーザーが快適にプレイできるよう、オプション画面を実装。UIにはUnityのPanel、Button、Toggle、Sliderを使用し、各種設定をリアルタイムで反映できるようにした。
 また、PlayerPrefsを利用して設定情報を保存することで、ゲームを再起動した際にも前回の設定が維持される仕組みを実装している。
+
+
 <img width="583" height="442" alt="スクリーンショット 2026-06-23 141103" src="https://github.com/user-attachments/assets/8af99bf9-72db-4b0f-92d1-5bef687dd720" />
+
 フルスクリーンモードON
 <img width="1536" height="103" alt="スクリーンショット 2026-06-23 164228" src="https://github.com/user-attachments/assets/f3557d2a-d912-4897-b205-9c5436d283eb" />
+
 フルスクリーンモードOFF
 <img width="1536" height="135" alt="スクリーンショット 2026-06-23 164220" src="https://github.com/user-attachments/assets/7fffeb23-1e23-4286-8592-95954004f8aa" />
 
