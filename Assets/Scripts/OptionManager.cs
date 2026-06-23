@@ -6,7 +6,7 @@ public class OptionManager : MonoBehaviour
     //オプション画面のパネル
     public GameObject optionPanel;
 
-    //フルスクリーン設定用のパネル
+    //フルスクリーン設定用のトグル
     public Toggle fullscreenToggle;
 
     private bool isInitializing = false;
@@ -20,35 +20,41 @@ public class OptionManager : MonoBehaviour
 
         ApplyFullscreen(isFullscreen);
 
-        //トグルが設定されている場合は状態を同期
+        //トグルが設定されている場合は保存されていた設定と表示状態を同期
         if (fullscreenToggle != null)
         {
             isInitializing = true;
             fullscreenToggle.isOn = isFullscreen;
             isInitializing = false;
         }
-
+        //デバッグ用に読み込んだ設定を確認
         Debug.Log("Loaded Fullscreen = " + isFullscreen);
     }
     public void SetFullscreen(bool unused)
     {
+        //トグルの現在の状態を取得
         bool isOn = fullscreenToggle.isOn;
 
+        //デバッグ用に現在の設定を確認
         Debug.Log("Fullscreen = " + isOn);
 
+        //フルスクリーン設定を反映
         ApplyFullscreen(isOn);
 
+        //設定を保存し、次回起動時にも反映されるようにする
         PlayerPrefs.SetInt("Fullscreen", isOn ? 1 : 0);
         PlayerPrefs.Save();
     }
 
     void ApplyFullscreen(bool isOn)
     {
+        //フルスクリーンONの場合
         if (isOn)
         {
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
             Screen.fullScreen = true;
         }
+        //フルスクリーンOFFの場合
         else
         {
             Screen.fullScreenMode = FullScreenMode.Windowed;
@@ -60,7 +66,7 @@ public class OptionManager : MonoBehaviour
     {
         //オプション画面を表示
         optionPanel.SetActive(true);
-        //ゲームを一時停止
+        //ゲーム一時停止
         Time.timeScale = 0f;
     }
 
@@ -68,7 +74,7 @@ public class OptionManager : MonoBehaviour
     {
         //オプション画面を非表示
         optionPanel.SetActive(false);
-        //ゲームを再開
+        //ゲーム再開
         Time.timeScale = 1f;
     }
 

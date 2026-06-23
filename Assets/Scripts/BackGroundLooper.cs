@@ -3,23 +3,35 @@ using UnityEngine;
 
 public class BackgroundLooper : MonoBehaviour
 {
+    //生成する背景画像のプレハブ
     public GameObject backgroundPrefab;
+    //プレイヤーの位置を取得するためのTransform
     public Transform player;
 
+    //背景１枚分の高さ
     public float backgroundHeight = 10f;
+    //ゲーム開始時に生成する背景枚数
     public int startCount = 5;
 
+    //プレイヤのどれくらい先まで背景を生成するか
     public float generateAheadDistance = 30f;
+
+    //プレイヤから一定距離下に離れた背景画像を削除する距離
     public float deleteBelowDistance = 20f;
 
+    //生成済背景を管理するリスト
     private List<GameObject> backgrounds = new List<GameObject>();
 
+    //最後に生成した背景のY座標
     private float lastY = 0f;
+    //生成した背景枚数を管理
     private int createdBackgroundCount = 0;
+    //元のスケールを保存
     private Vector3 baseScale;
 
     void Start()
     {
+        //プレハブの初期スケールを保存
         baseScale = backgroundPrefab.transform.localScale;
 
         for (int i = 0; i < startCount; i++)
