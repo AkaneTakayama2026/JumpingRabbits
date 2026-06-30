@@ -216,10 +216,10 @@
 
 <img width="583" height="442" alt="スクリーンショット 2026-06-23 141103" src="https://github.com/user-attachments/assets/8af99bf9-72db-4b0f-92d1-5bef687dd720" />
 
-フルスクリーンモードON
+フルスクリーンモードOFF
 <img width="1536" height="103" alt="スクリーンショット 2026-06-23 164228" src="https://github.com/user-attachments/assets/f3557d2a-d912-4897-b205-9c5436d283eb" />
 
-フルスクリーンモードOFF
+フルスクリーンモードON
 <img width="1536" height="135" alt="スクリーンショット 2026-06-23 164220" src="https://github.com/user-attachments/assets/7fffeb23-1e23-4286-8592-95954004f8aa" />
 
 
